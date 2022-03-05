@@ -1,5 +1,5 @@
 # GPS_PseudoRange
- GNSS_PseudoRange :  determine a receiver 3D position from pseudorange 
+ GNSS_PseudoRange :  determine a receiver 3D position from pseudorange
                      measurement with psedorange with receiver clock-bias
                      using least-square adjusment
  Author : Phisan Santitamtnont, Faculty of Engineering, Chulalongkorn University

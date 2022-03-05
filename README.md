@@ -10,7 +10,7 @@
 
 ![alt text](https://github.com/phisan-chula/GPS_PseudoRange/blob/main/GPS_PR_Positioning.png)
 
-Result:
+Result:<br>
 
 |    |   PRN |       ECEF_X |       ECEF_Y |            ECEF_Z |   SVClkErr_m |
 |---:|------:|-------------:|-------------:|------------------:|-------------:|
@@ -22,13 +22,13 @@ Result:
 |  5 |    21 | -2.22995e+07 | -6.45859e+06 |       1.36156e+07 |      19513.5 |
 |  6 |    30 | -1.80444e+07 | -1.95661e+07 | -289954           |      22534.8 |
 
-===================== Result from LSQ =================
-Reduce chi-square : 12.2 meter.
-X:    506,077.0 meter  +/-2.4
-Y: -4,882,270.9 meter  +/-7.0
-Z:  4,059,621.3 meter  +/-4.2
-dt:           250.7 nanosec  +/-151.5
-dt:             7.5 m  +/-4.5
+===================== Result from LSQ =================<br>
+Reduce chi-square : 12.2 meter.<br>
+X:    506,077.0 meter  +/-2.4<br>
+Y: -4,882,270.9 meter  +/-7.0<br>
+Z:  4,059,621.3 meter  +/-4.2<br>
+dt:           250.7 nanosec  +/-151.5<br>
+dt:             7.5 m  +/-4.5<br>
 
 |    |   PRN |     Range_m |      Resid |
 |---:|------:|------------:|-----------:|

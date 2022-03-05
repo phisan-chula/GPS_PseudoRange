@@ -83,8 +83,6 @@ def residual( pars, gps_pr ):
         resid.append( [mod_rng-dat_rng] )   #  model-data
     return resid
 
-
-
 #############################################################
 import argparse
 parser = argparse.ArgumentParser(description=PROG)
@@ -92,15 +90,15 @@ parser.add_argument('-p','--plot', action='store_true',
         help='plot pseudorange positioning scenario') 
 args = parser.parse_args()
 
-
 gps_pr = GPS_PR()
-print( gps_pr.dfSV[['PRN', 'ECEF_X', 'ECEF_Y', 'ECEF_Z', 'SVClkErr_m' ]] )
+print( gps_pr.dfSV[['PRN', 'ECEF_X', 'ECEF_Y', 'ECEF_Z', 'SVClkErr_m' ]].to_markdown() )
 X = [ 506_000, -4_882_000, 4_109_000, 0.0 ]  #  initial RCV ECEF + Rcv.Clk.Bias
 
+# perform least-square adjustment computation via Levenberg-Marquadt algorithm
 Unk = Parameters()
 for i,unk in enumerate( gps_pr.UNKNOWN ):
     Unk.add( unk, value=X[i] ) 
-result = minimize( residual, Unk,  args=(gps_pr,) )  # perform LSQ 
+result = minimize( residual, Unk,  args=(gps_pr,) )  
 print( fit_report ( result ) )
 
 print('===================== Result from LSQ =================')
@@ -117,11 +115,9 @@ for unk in result.var_names:
     else:
         RCV_ECEF.append( val )
         print( f'{unk}: {val:12,.1f} meter  +/-{std:3.1f}' )
-gps_pr.dfMeas['Resid'] = result.residual
+gps_pr.dfMeas['Resid_m'] = result.residual
 pd.options.display.float_format = '{:,.1f} m'.format
-print( gps_pr.dfMeas )
-
+print( gps_pr.dfMeas.to_markdown() )
 if args.plot:
     gps_pr.Plot3D( RCV_ECEF )
-
 #import pdb; pdb.set_trace()

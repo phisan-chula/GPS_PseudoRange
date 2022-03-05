@@ -10,7 +10,7 @@
 
 ![alt text](https://github.com/phisan-chula/GPS_PseudoRange/blob/main/GPS_PR_Positioning.png)
 
-Result:<br>
+Input pseudoranges and  broadcasted  satellite clock bias:<br>
 
 |    |   PRN |       ECEF_X |       ECEF_Y |            ECEF_Z |   SVClkErr_m |
 |---:|------:|-------------:|-------------:|------------------:|-------------:|

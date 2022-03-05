@@ -1,2 +1,12 @@
 # GPS_PseudoRange
-Compute GPS receiver possition from pseudo ranges measured to at least 4 SV and model receiver clock bias.
+ GNSS_PseudoRange :  determine a receiver 3D position from pseudorange 
+                     measurement with psedorange with receiver clock-bias
+                     using least-square adjusment
+ Author : Phisan Santitamtnont, Faculty of Engineering, Chulalongkorn University
+          email: phisan.chula@gmail.com
+ Reference: Raquet John, Workshop on GNSS Data Application to Low Latitude
+            Ionospheric Research, 6-17 May 2013, The Abdus Salam International 
+            for Theoretical Physics, OH 45433, USA
+
+![alt text](http://url/to/img.png)
+

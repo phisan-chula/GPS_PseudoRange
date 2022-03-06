@@ -35,7 +35,8 @@ Reduce chi-square : 12.2 meter.<br>
 |  2 |           Z |  4,059,621.3 m |  +/-4.2 m |
 |  3 |          dt |      250.72 ns | +/-151 ns |
 |  4 |          dt |          7.5 m |  +/-4.5 m |
-***dt : receiver clock bias
+
+*dt : receiver clock bias*
 
 ==================PR Residuals =================<br>
 |    |   PRN |        Range_m |   Resid_m |

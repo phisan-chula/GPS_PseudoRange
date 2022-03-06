@@ -24,11 +24,14 @@ Input pseudoranges and  broadcasted  satellite clock bias (SVClkErr_m):<br>
 
 ===================== Result from LSQ =================<br>
 Reduce chi-square : 12.2 meter.<br>
-X:    506,077.0 meter  +/-2.4<br>
-Y: -4,882,270.9 meter  +/-7.0<br>
-Z:  4,059,621.3 meter  +/-4.2<br>
-dt:           250.7 nanosec  +/-151.5<br>
-dt:             7.5 m  +/-4.5<br>
+|    |   Parameter |          Value |      Std |
+|---:|------------:|---------------:|---------:|
+|  0 |           X |    506,077.0 m |   +/-2.4 |
+|  1 |           Y | -4,882,270.9 m |   +/-7.0 |
+|  2 |           Z |  4,059,621.3 m |   +/-4.2 |
+|  3 |          dt |     250.719 ns | +/-151.5 |
+|  4 |          dt |          7.5 m |   +/-4.5 |
+
 
 ==================PR Residuals =================<br>
 |    |   PRN |        Range_m |   Resid_m |

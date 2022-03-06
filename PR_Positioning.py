@@ -91,7 +91,8 @@ parser.add_argument('-p','--plot', action='store_true',
 args = parser.parse_args()
 
 gps_pr = GPS_PR()
-print( gps_pr.dfSV[['PRN', 'ECEF_X', 'ECEF_Y', 'ECEF_Z', 'SVClkErr_m' ]].to_markdown() )
+print( gps_pr.dfSV[['PRN', 'ECEF_X', 'ECEF_Y', 'ECEF_Z', 'SVClkErr_m' ]].\
+                     to_markdown(floatfmt=",.3f") )
 X = [ 506_000, -4_882_000, 4_109_000, 0.0 ]  #  initial RCV ECEF + Rcv.Clk.Bias
 
 # perform least-square adjustment computation via Levenberg-Marquadt algorithm
@@ -101,23 +102,24 @@ for i,unk in enumerate( gps_pr.UNKNOWN ):
 result = minimize( residual, Unk,  args=(gps_pr,) )  
 print( fit_report ( result ) )
 
-print('===================== Result from LSQ =================')
+print('=============== Result from LSQ ===============')
 print( 'Reduce chi-square : {:,.1f} meter.'.format(result.redchi) )
-RCV_ECEF = list()
+RCV_ECEF = list() ; TAB=list()
 for unk in result.var_names:
     val = result.params[unk].value
     std = result.params[unk].stderr
     if unk=='dt':
         val_nano = val*10E9  # nano sec
         std_nano = std*10E9  # nano sec
-        print( f'{unk}: {val_nano:15,.1f} nanosec  +/-{std_nano:3.1f}' )
-        print( f'{unk}: {gps_pr.v*val:15,.1f} m  +/-{gps_pr.v*std:3.1f}' )
+        TAB.append( [f'{unk:4s}', f'{val_nano:18.3f} ns', f'+/-{std_nano:3.0f} ns'] )
+        TAB.append( [f'{unk:4s}', f'{gps_pr.v*val:15,.1f} m', f'+/-{gps_pr.v*std:3.1f} m'] )
     else:
         RCV_ECEF.append( val )
-        print( f'{unk}: {val:12,.1f} meter  +/-{std:3.1f}' )
+        TAB.append( [f'{unk:4s}', f'{val:12,.1f} m',  f'+/-{std:3.1f} m'] )
+print( pd.DataFrame(TAB,columns=['Parameter','Value','Std']).to_markdown(stralign='right') )
+print('==================PR Residuals =================')
 gps_pr.dfMeas['Resid_m'] = result.residual
-pd.options.display.float_format = '{:,.1f} m'.format
-print( gps_pr.dfMeas.to_markdown() )
+print( gps_pr.dfMeas.to_markdown(floatfmt=",.3f") )
 if args.plot:
     gps_pr.Plot3D( RCV_ECEF )
 #import pdb; pdb.set_trace()

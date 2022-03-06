@@ -67,7 +67,7 @@ class GPS_PR:
             X,Y,Z = RCV_ECEF
             ax.plot( [row.ECEF_X,X], [row.ECEF_Y,Y] ,[row.ECEF_Z,Z] )
             ax.scatter( row.ECEF_X,row.ECEF_Y,row.ECEF_Z, s=300, alpha=0.5  ) 
-            ax.text( row.ECEF_X,row.ECEF_Y,row.ECEF_Z, row.PRN, fontsize=15  ) 
+            ax.text( row.ECEF_X,row.ECEF_Y,row.ECEF_Z, f'SV-{row.PRN}', fontsize=15  ) 
         ax.text( X,Y,Z, 'RCV' , fontsize=20 ) 
         plt.show()
 
@@ -111,7 +111,7 @@ for unk in result.var_names:
     if unk=='dt':
         val_nano = val*10E9  # nano sec
         std_nano = std*10E9  # nano sec
-        TAB.append( [f'{unk:4s}', f'{val_nano:18.3f} ns', f'+/-{std_nano:3.0f} ns'] )
+        TAB.append( [f'{unk:4s}', f'{val_nano:18.2f} ns', f'+/-{std_nano:3.0f} ns'] )
         TAB.append( [f'{unk:4s}', f'{gps_pr.v*val:15,.1f} m', f'+/-{gps_pr.v*std:3.1f} m'] )
     else:
         RCV_ECEF.append( val )

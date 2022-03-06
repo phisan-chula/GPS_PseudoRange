@@ -2,7 +2,7 @@
  GNSS_PseudoRange :  determine a receiver 3D position from pseudorange
                      measurement with psedorange with receiver clock-bias
                      using least-square adjusment<br>
-                     The observation equation is following :<br>
+                     The observation equation of each pseudorange follows :<br>
 <img src="http://latex.codecogs.com/svg.latex?\large&space;\rho&space;_{j}&space;&plus;&space;v_{j}&space;=&space;\sqrt{(X_{j}-X_{r})^{2}&space;&plus;&space;(Y_{j}-Y_{r})^{2}&space;&plus;&space;(Z_{j}-Z_{r})^{2}}&space;&plus;&space;c\cdot&space;\delta&space;_{t_{r}}" title="http://latex.codecogs.com/svg.latex?\large \rho _{j} + v_{j} = \sqrt{(X_{j}-X_{r})^{2} + (Y_{j}-Y_{r})^{2} + (Z_{j}-Z_{r})^{2}} + c\cdot \delta _{t_{r}}" />
 <br>
 where Xj,Yj,Zj is coordinate of GPS satellites and Xr,Yr,Zr is position of receiver, dtr is receiver clock bias and c is the speed of light.<br>  

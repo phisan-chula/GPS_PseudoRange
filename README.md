@@ -1,13 +1,14 @@
 # GPS_PseudoRange
  GNSS_PseudoRange :  determine a receiver 3D position from pseudorange
                      measurement with psedorange with receiver clock-bias
-                     using least-square adjusment
-                     <img src="http://latex.codecogs.com/svg.latex?\LARGE&space;\rho&space;_{j}&space;&plus;&space;v_{j}&space;=&space;\sqrt{(X_{j}-X_{r})^{2}&space;&plus;&space;(Y_{j}-Y_{r})^{2}&space;&plus;&space;(Z_{j}-Z_{r})^{2}}&space;&plus;&space;c\cdot&space;\delta&space;_{t_{r}}" title="http://latex.codecogs.com/svg.latex?\LARGE \rho _{j} + v_{j} = \sqrt{(X_{j}-X_{r})^{2} + (Y_{j}-Y_{r})^{2} + (Z_{j}-Z_{r})^{2}} + c\cdot \delta _{t_{r}}" />
+                     using least-square adjusment<br>
+<img src="http://latex.codecogs.com/svg.latex?\large&space;\rho&space;_{j}&space;&plus;&space;v_{j}&space;=&space;\sqrt{(X_{j}-X_{r})^{2}&space;&plus;&space;(Y_{j}-Y_{r})^{2}&space;&plus;&space;(Z_{j}-Z_{r})^{2}}&space;&plus;&space;c\cdot&space;\delta&space;_{t_{r}}" title="http://latex.codecogs.com/svg.latex?\large \rho _{j} + v_{j} = \sqrt{(X_{j}-X_{r})^{2} + (Y_{j}-Y_{r})^{2} + (Z_{j}-Z_{r})^{2}} + c\cdot \delta _{t_{r}}" />
+<br>
  Author : Phisan Santitamtnont, Faculty of Engineering, Chulalongkorn University
-          email: phisan.chula@gmail.com
+          email: phisan.chula@gmail.com<br>
  Reference: Raquet John, Workshop on GNSS Data Application to Low Latitude
             Ionospheric Research, 6-17 May 2013, The Abdus Salam International 
-            for Theoretical Physics, OH 45433, USA
+            for Theoretical Physics, OH 45433, USA<br>
 
 ![alt text](https://github.com/phisan-chula/GPS_PseudoRange/blob/main/GPS_PR_Positioning.png)
 
